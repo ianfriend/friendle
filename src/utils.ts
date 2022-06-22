@@ -168,40 +168,40 @@ export const keys = ["qwertyuiop", "asdfghjkl", "zxcvbnm"];
 export function newSeed(mode: GameMode) {
 	const now = Date.now();
 	switch (mode) {
-		case GameMode.daily:
-			// Adds time zome offset to UTC time, calculates how many days that falls after 1/1/1970
-			// and returns the unix time for the beginning of that day.
-			return Date.UTC(1970, 0, 1 + Math.floor((now - (new Date().getTimezoneOffset() * ms.MINUTE)) / ms.DAY));
-		case GameMode.hourly:
-			return now - (now % ms.HOUR);
-		// case GameMode.minutely:
-		// 	return now - (now % ms.MINUTE);
+		// case GameMode.daily:
+		// 	// Adds time zome offset to UTC time, calculates how many days that falls after 1/1/1970
+		// 	// and returns the unix time for the beginning of that day.
+		// 	return Date.UTC(1970, 0, 1 + Math.floor((now - (new Date().getTimezoneOffset() * ms.MINUTE)) / ms.DAY));
+		// case GameMode.hourly:
+		// 	return now - (now % ms.HOUR);
+		// // case GameMode.minutely:
+		// // 	return now - (now % ms.MINUTE);
 		case GameMode.infinite:
 			return now - (now % ms.SECOND);
 	}
 }
 
 export const modeData: ModeData = {
-	default: GameMode.daily,
+	default: GameMode.infinite,
 	modes: [
-		{
-			name: "Daily",
-			unit: ms.DAY,
-			start: 1642370400000,	// 17/01/2022 UTC+2
-			seed: newSeed(GameMode.daily),
-			historical: false,
-			streak: true,
-			useTimeZone: true,
-		},
-		{
-			name: "Hourly",
-			unit: ms.HOUR,
-			start: 1642528800000,	// 18/01/2022 8:00pm UTC+2
-			seed: newSeed(GameMode.hourly),
-			historical: false,
-			icon: "m50,7h100v33c0,40 -35,40 -35,60c0,20 35,20 35,60v33h-100v-33c0,-40 35,-40 35,-60c0,-20 -35,-20 -35,-60z",
-			streak: true,
-		},
+		// {
+		// 	name: "Daily",
+		// 	unit: ms.DAY,
+		// 	start: 1642370400000,	// 17/01/2022 UTC+2
+		// 	seed: newSeed(GameMode.daily),
+		// 	historical: false,
+		// 	streak: true,
+		// 	useTimeZone: true,
+		// },
+		// {
+		// 	name: "Hourly",
+		// 	unit: ms.HOUR,
+		// 	start: 1642528800000,	// 18/01/2022 8:00pm UTC+2
+		// 	seed: newSeed(GameMode.hourly),
+		// 	historical: false,
+		// 	icon: "m50,7h100v33c0,40 -35,40 -35,60c0,20 35,20 35,60v33h-100v-33c0,-40 35,-40 35,-60c0,-20 -35,-20 -35,-60z",
+		// 	streak: true,
+		// },
 		{
 			name: "Infinite",
 			unit: ms.SECOND,
