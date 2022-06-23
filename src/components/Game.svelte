@@ -175,7 +175,6 @@
 		on:closeTutPopUp|once={() => ($settings.tutorial = 0)}
 		board={game.board}
 		guesses={game.guesses}
-		icon={modeData.modes[$mode].icon}
 	/>
 	<Keyboard
 		on:keystroke={() => {
@@ -195,7 +194,7 @@
 
 <Modal
 	bind:visible={showTutorial}
-	on:close|once={() => $settings.tutorial === 3 && --$settings.tutorial}
+	on:close|once={() => {if($settings.tutorial === 3) { $settings.tutorial = 0}}}
 	fullscreen={$settings.tutorial === 0}
 >
 	<Tutorial visible={showTutorial} />

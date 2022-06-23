@@ -9,7 +9,6 @@
 	export let value: string[];
 	export let board: GameBoard;
 	export let guesses: number;
-	export let icon: string;
 	export let tutorial: boolean;
 	export function shake(row: number) {
 		rows[row].shake();
@@ -59,11 +58,6 @@
 			on:ctx={(e) => context(e.detail.x, e.detail.y, i, value[i])}
 		/>
 	{/each}
-	{#if icon}
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
-			<path d={icon} stroke-width="14" />
-		</svg>
-	{/if}
 	{#if tutorial}
 		<div transition:scale class="tutorial" on:click={() => dispatch("closeTutPopUp")}>
 			double tap (right click) a row to see a word's definition, or how many words could be
@@ -83,18 +77,6 @@
 		aspect-ratio: var(--cols) / var(--rows);
 		padding: 10px;
 		position: relative;
-	}
-	svg {
-		position: absolute;
-		z-index: -1;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		width: min(130%, 100vw);
-		max-height: 100%;
-	}
-	path {
-		stroke: var(--bg-secondary);
 	}
 	.tutorial {
 		top: calc(100 / var(--rows) * 1%);
