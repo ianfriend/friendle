@@ -1,5 +1,5 @@
 const words = {
-	"words": ["orla"],
+	"words": ["poli"],
 	"valid": [
 		"aali",
 "aase",
@@ -1327,6 +1327,7 @@ const words = {
 "oren",
 "orfa",
 "oria",
+"orla",
 "osas",
 "osel",
 "otar",
@@ -1362,6 +1363,7 @@ const words = {
 "pino",
 "pius",
 "pola",
+"poli",
 "polo",
 "popa",
 "poul",

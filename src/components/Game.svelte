@@ -7,15 +7,9 @@
 	import { getContext, onMount, setContext } from "svelte";
 	import Settings from "./settings";
 	import {
-		Share,
-		Seperator,
-		Definition,
 		Tutorial,
-		Statistics,
-		Distribution,
 		Timer,
 		Toaster,
-		ShareGame,
 	} from "./widgets";
 	import {
 		contractNum,
@@ -88,7 +82,7 @@
 			if (game.board.words[game.guesses - 1] === word) win();
 			else if (game.guesses === ROWS) lose();
 		} else {
-			toaster.pop("Not in word list");
+			toaster.pop("Not in name list");
 			board.shake(game.guesses);
 		}
 	}
@@ -201,28 +195,15 @@
 </Modal>
 
 <Modal bind:visible={showStats}>
-	{#if modeData.modes[$mode].historical}
-		<h2 class="historical">Statistics not available for historical games</h2>
-	{:else}
-		<Statistics data={stats} />
-		<Distribution distribution={stats.guesses} {game} />
-	{/if}
-	<Seperator visible={!game.active}>
-		<Timer
-			slot="1"
-			bind:this={timer}
-			on:timeup={() => (showRefresh = true)}
-			on:reload={reload}
-		/>
-		<Share slot="2" state={game} />
-	</Seperator>
-	<ShareGame wordNumber={game.wordNumber} />
 	{#if !game.active}
-		<Definition {word} alternates={2} />
+		<h3>Introducing baby {word.toUpperCase()}.</h3>
+		<div class="result">Born dd MMM yyyy</div>
+		<img class="baby-photo" alt="Baby {word}" src="img/baby.jpg" />
 	{:else}
 		<!-- Fade with delay is to prevent a bright red button from appearing as soon as refresh is pressed -->
 		<div in:fade={{ delay: 300 }} class="concede" on:click={concede}>give up</div>
 	{/if}
+		
 </Modal>
 
 <Modal fullscreen={true} bind:visible={showSettings}>
@@ -250,6 +231,12 @@
 </Modal>
 
 <style lang="scss">
+	.result {
+		text-align: center;
+	}
+	.baby-photo {
+		width: 100%
+	}
 	main {
 		display: flex;
 		flex-direction: column;
@@ -259,12 +246,6 @@
 		max-width: var(--game-width);
 		margin: auto;
 		position: relative;
-	}
-	.historical {
-		text-align: center;
-		margin-top: 10px;
-		padding: 0 20px;
-		text-transform: uppercase;
 	}
 	.concede {
 		margin-top: 15px;
