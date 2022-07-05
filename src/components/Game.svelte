@@ -197,7 +197,7 @@
 <Modal bind:visible={showStats}>
 	{#if !game.active}
 		<h3>Introducing baby {word.toUpperCase()}.</h3>
-		<div class="result">Born dd MMM yyyy</div>
+		<div class="result">Due 17th July 2022</div>
 		<img class="baby-photo" alt="Baby {word}" src="img/baby.jpg" />
 	{:else}
 		<!-- Fade with delay is to prevent a bright red button from appearing as soon as refresh is pressed -->

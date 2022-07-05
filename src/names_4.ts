@@ -1,5 +1,5 @@
 const words = {
-	"words": ["poli"],
+	"words": ["blpy"],
 	"valid": [
 		"aali",
 "aase",
