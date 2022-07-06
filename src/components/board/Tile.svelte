@@ -3,14 +3,14 @@
 
 	import { mode } from "../../stores";
 
-	import { DELAY_INCREMENT, ROWS } from "../../utils";
+	import { DELAY_INCREMENT, ROWS, GENDER } from "../../utils";
 
 	export let value = "";
 	export let state: LetterState;
 	export let position = 0;
 	export function bounce() {
 		setTimeout(() => (animation = "bounce"), (ROWS + position) * DELAY_INCREMENT);
-		setTimeout(() => (genderClass = "gender"), ((ROWS + position) * DELAY_INCREMENT) + (DELAY_INCREMENT * 2));
+		setTimeout(() => (genderClass = GENDER), ((ROWS + position) * DELAY_INCREMENT) + (DELAY_INCREMENT * 2));
 	}
 	let s: string;
 	let pop = false;
@@ -90,8 +90,13 @@
 	.🟨 .back {
 		background: var(--color-present);
 	}
-	.gender {
-		background: var(--color-gender) !important;
+	.boy {
+		background: var(--color-boy) !important;
+		color:  var(--gender-text) !important;
+	}
+	.girl {
+		background: var(--color-girl) !important;
+		color:  var(--gender-text) !important;
 	}
 	:global(.complete) .tile:not(.🔳) .front {
 		transition-delay: inherit !important;

@@ -242,6 +242,9 @@ export const PRAISE = [
 	"Phew",
 ];
 
+export const GENDER = "girl";
+export const GENDER_REVEAL = `You guessed it! Its a ${GENDER}!`;
+
 export function createNewGame(mode: GameMode): GameState {
 	return {
 		active: true,

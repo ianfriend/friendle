@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { fade } from "svelte/transition";
+	import { GENDER } from "../../utils";
 
 	export function pop(text: string, duration = 1) {
 		toast = [text, ...toast];
@@ -10,7 +11,7 @@
 
 <div class="toast">
 	{#each toast as slice}
-		<div class="slice" out:fade={{ duration: 200 }}>{slice}</div>
+		<div class="slice {GENDER}" out:fade={{ duration: 200 }}>{slice}</div>
 	{/each}
 </div>
 
@@ -30,5 +31,13 @@
 		margin: 16px auto;
 		border-radius: 4px;
 		width: fit-content;
+	}
+	.boy {
+		background: var(--color-boy) !important;
+		color:  var(--gender-text) !important;
+	}
+	.girl {
+		background: var(--color-girl) !important;
+		color:  var(--gender-text) !important;
 	}
 </style>

@@ -15,6 +15,7 @@
 		contractNum,
 		DELAY_INCREMENT,
 		PRAISE,
+		GENDER_REVEAL,
 		getState,
 		modeData,
 		checkHardMode,
@@ -91,7 +92,8 @@
 		board.bounce(game.guesses - 1);
 		game.active = false;
 		setTimeout(
-			() => toaster.pop(PRAISE[game.guesses - 1]),
+		//	() => toaster.pop(PRAISE[game.guesses - 1]),
+		() => toaster.pop(GENDER_REVEAL, 30),
 			DELAY_INCREMENT * COLS + DELAY_INCREMENT
 		);
 		setTimeout(setShowStatsTrue, delay * 1.4);
