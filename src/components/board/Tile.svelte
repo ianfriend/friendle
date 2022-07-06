@@ -10,10 +10,12 @@
 	export let position = 0;
 	export function bounce() {
 		setTimeout(() => (animation = "bounce"), (ROWS + position) * DELAY_INCREMENT);
+		setTimeout(() => (genderClass = "gender"), ((ROWS + position) * DELAY_INCREMENT) + (DELAY_INCREMENT * 2));
 	}
 	let s: string;
 	let pop = false;
 	let animation = "";
+	let genderClass = "";
 
 	// reset animation when value changes, because for some reason changing anination to "" when the game is over causes the tiles to flash
 	$: !value && (animation = "");
@@ -38,7 +40,7 @@
 	style="transition-delay: {position * DELAY_INCREMENT}ms"
 >
 	<div class="front">{value}</div>
-	<div class="back">{value}</div>
+	<div class="back {genderClass}">{value}</div>
 </div>
 
 <style lang="scss">
@@ -87,6 +89,9 @@
 	}
 	.🟨 .back {
 		background: var(--color-present);
+	}
+	.gender {
+		background: var(--color-gender) !important;
 	}
 	:global(.complete) .tile:not(.🔳) .front {
 		transition-delay: inherit !important;

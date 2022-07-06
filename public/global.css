@@ -34,6 +34,9 @@
 	--red: #9C2323;
 	--color-present: #b59f3b;
 	--color-correct: #538d4e;
+	/* --color-male: #89CFF0; */
+	/* --color-female: #F4C2C2; */
+	--color-gender: #89CFF0;
 	--color-absent: var(--border-primary);
 	--evaluated-key-color: var(--fg-primary);
 	--key-bg: var(--fg-secondary);
