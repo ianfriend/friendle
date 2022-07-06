@@ -27,6 +27,17 @@
 
 	<script defer src="build/bundle.js"></script>
 	<!-- changed to something more suited to being the title of a tab in App.svelte. This title is for SEO -->
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-DEC5QNKGVW"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-DEC5QNKGVW');
+	</script>
+	
 	<title>The "Baby Friend" reveal game | Friendle</title>
 </head>
 
