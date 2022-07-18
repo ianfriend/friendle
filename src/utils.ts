@@ -1,9 +1,9 @@
 import seedrandom from "seedrandom";
 import { GameMode, ms } from "./enums";
-import wordList from "./names_4";
+import wordList from "./names_5";
 
 export const ROWS = 6;
-export const COLS = 4;
+export const COLS = 5;
 
 export const words = {
 	...wordList,
