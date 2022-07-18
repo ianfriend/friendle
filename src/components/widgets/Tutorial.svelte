@@ -22,17 +22,17 @@
 	</div>
 	<div>The letter <strong>D</strong> is in the word and in the correct spot.</div>
 	<div class="row">
-		<Tile value="b" state="🔳" />
+		<Tile value="j" state="🔳" />
 		<Tile value="i" state="🟨" />
 		<Tile value="l" state="🔳" />
 		<Tile value="l" state="🔳" />
 	</div>
 	<div>The letter <strong>I</strong> is in the word but in the wrong spot.</div>
 	<div class="row">
-		<Tile value="f" state="🔳" />
-		<Tile value="r" state="🔳" />
+		<Tile value="g" state="🔳" />
+		<Tile value="w" state="🔳" />
 		<Tile value="e" state="⬛"/>
-		<Tile value="d" state="🔳" />
+		<Tile value="n" state="🔳" />
 	</div>
 	<div>The letter <strong>E</strong> is not in the word in any spot.</div>
 </div>
