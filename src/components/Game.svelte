@@ -93,7 +93,7 @@
 		game.active = false;
 		setTimeout(
 		//	() => toaster.pop(PRAISE[game.guesses - 1]),
-		() => toaster.pop(GENDER_REVEAL, 30),
+		() => toaster.pop(GENDER_REVEAL, 5),
 			DELAY_INCREMENT * COLS + DELAY_INCREMENT
 		);
 		setTimeout(setShowStatsTrue, delay * 1.4);
@@ -198,8 +198,8 @@
 
 <Modal bind:visible={showStats}>
 	{#if !game.active}
-		<h3>Introducing baby {word.toUpperCase()}.</h3>
-		<div class="result">Due 17th July 2022</div>
+		<h3>Introducing {word.toUpperCase()} Georgia Friend.</h3>
+		<div class="result">Born 19th July 2022 at 10:41am weighing 8lbs 6oz</div>
 		<img class="baby-photo" alt="Baby {word}" src="img/baby.jpg" />
 	{:else}
 		<!-- Fade with delay is to prevent a bright red button from appearing as soon as refresh is pressed -->
