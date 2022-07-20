@@ -93,7 +93,7 @@
 		game.active = false;
 		setTimeout(
 		//	() => toaster.pop(PRAISE[game.guesses - 1]),
-		() => toaster.pop(GENDER_REVEAL, 5),
+		() => toaster.pop(GENDER_REVEAL, 3),
 			DELAY_INCREMENT * COLS + DELAY_INCREMENT
 		);
 		setTimeout(setShowStatsTrue, delay * 1.4);
