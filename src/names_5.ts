@@ -3378,6 +3378,7 @@ const words = {
 'senia',
 'seppo',
 'seraj',
+'seren',
 'serge',
 'sergi',
 'sergo',
