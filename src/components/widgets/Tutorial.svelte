@@ -25,11 +25,11 @@
 	<div class="row">
 		<Tile value="a" state="🔳" />
 		<Tile value="l" state="🔳" />
-		<Tile value="e" state="🟨" />
-		<Tile value="x" state="🔳" />
+		<Tile value="e" state="🔳" />
+		<Tile value="x" state="🟨" />
 		<Tile value="a" state="🔳" />
 	</div>
-	<div>The letter <strong>L</strong> is in the word but in the wrong spot.</div>
+	<div>The letter <strong>X</strong> is in the word but in the wrong spot.</div>
 	<div class="row">
 		<Tile value="n" state="🔳" />
 		<Tile value="i" state="🔳" />
