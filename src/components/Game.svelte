@@ -237,7 +237,7 @@
 		text-align: center;
 	}
 	.baby-photo {
-		width: 100%
+		width: 100%;
 	}
 	main {
 		display: flex;
