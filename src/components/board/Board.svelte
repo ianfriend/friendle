@@ -46,28 +46,32 @@
 {#if showCtx}
 	<ContextMenu {pAns} {pSols} {x} {y} {word} />
 {/if}
-
-<div class="board">
-	{#each value as _, i}
-		<Row
-			num={i}
-			{guesses}
-			bind:this={rows[i]}
-			bind:value={value[i]}
-			state={board.state[i]}
-			on:ctx={(e) => context(e.detail.x, e.detail.y, i, value[i])}
-		/>
-	{/each}
-	{#if tutorial}
-		<div transition:scale class="tutorial" on:click={() => dispatch("closeTutPopUp")}>
-			double tap (right click) a row to see a word's definition, or how many words could be
-			played there
-			<span class="ok">OK</span>
-		</div>
-	{/if}
+<div class="board-container">
+	<div class="board">
+		{#each value as _, i}
+			<Row
+				num={i}
+				{guesses}
+				bind:this={rows[i]}
+				bind:value={value[i]}
+				state={board.state[i]}
+				on:ctx={(e) => context(e.detail.x, e.detail.y, i, value[i])}
+			/>
+		{/each}
+		{#if tutorial}
+			<div transition:scale class="tutorial" on:click={() => dispatch("closeTutPopUp")}>
+				double tap (right click) a row to see a word's definition, or how many words could be
+				played there
+				<span class="ok">OK</span>
+			</div>
+		{/if}
+	</div>
 </div>
-
 <style>
+	.board-container {
+		display: flex;
+		width: 100%;
+	}
 	.board {
 		display: grid;
 		grid-template-rows: repeat(var(--rows), 1fr);
