@@ -46,7 +46,7 @@
 {#if showCtx}
 	<ContextMenu {pAns} {pSols} {x} {y} {word} />
 {/if}
-<div class="board-container">
+<!-- <div class="board-container"> -->
 	<div class="board">
 		{#each value as _, i}
 			<Row
@@ -66,7 +66,7 @@
 			</div>
 		{/if}
 	</div>
-</div>
+<!-- </div> -->
 <style>
 	.board-container {
 		display: flex;
